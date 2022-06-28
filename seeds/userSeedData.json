@@ -1,0 +1,21 @@
+[
+    {
+      "username": "test300",
+      "email": "test1@gmail.com",
+      "password": "test1",
+      "is_manager": "true"
+    },
+    {
+      "username": "test301",
+      "email": "test2@gmail.com",
+      "password": "test2",
+      "is_manager": "false"
+    },
+    {
+      "username": "test302",
+      "email": "test3@gmail.com",
+      "password": "test3",
+      "is_manager": "false"
+    }
+  ]
+  
