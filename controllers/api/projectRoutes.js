@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const { Project, Task, User_tasks } = require('../models');
-const withAuth = require('../utils/auth');
+const { Project } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/project:id', withAuth, async (req, res) => {
     try {
       const projectData = await Project.findAll({
-        attributes: {  },
-        order: [['', '']],
+        attributes: ['name'],
       });
   
       const projects = projectData.map((project) => project.get({ plain: true }));
@@ -19,4 +18,7 @@ router.get('/project:id', withAuth, async (req, res) => {
       res.status(500).json(e);
     }
   });
+
+
+  module.exports = router;
 
