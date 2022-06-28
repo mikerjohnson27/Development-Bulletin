@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/mikerjohnson27/Development-Bulletin#readme",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-fileupload": "^1.4.0",
-    "handlebars": "^4.7.7"
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "sequelize": "^6.21.2"
   }
 }
