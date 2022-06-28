@@ -21,7 +21,7 @@ Task.init(
     },
     complete_date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
     },
     project_id: {
       type: DataTypes.INTEGER,
