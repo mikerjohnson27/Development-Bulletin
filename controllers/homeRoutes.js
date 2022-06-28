@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Project } = require('../models');
+const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
     const projectData = await Project.findAll({
-      attributes: {  },
-      order: [['', '']],
+        model: User,
+        attributes: ['name'],
     });
 
     const projects = projectData.map((project) => project.get({ plain: true }));
@@ -14,6 +14,46 @@ router.get('/', withAuth, async (req, res) => {
     res.render('homepage', {
       projects,
       logged_in: req.session.logged_in,
+    });
+  } catch (e) {
+    res.status(500).json(e);
+  }
+});
+
+router.get('/project/:id', async (req, res) => {
+  try {
+    const projectData = await Project.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const project = projectData.get({ plain: true });
+
+    res.render('project', {
+      ...project,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/dev', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('dev', {
+      ...user,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
