@@ -1,0 +1,12 @@
+.center{
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    text-align: center;
+    
+}
+.border{
+border: 2px;
+border-style: solid;
+border-color: black;
+}
