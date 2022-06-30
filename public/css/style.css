@@ -1,12 +1,24 @@
-.center{
+.center-container{
+    position: relative;
+    display: block;
     align-items: center;
-    vertical-align: middle;
     justify-content: center;
-    text-align: center;
-    
+}
+.card{
+    display: block;
+    justify-content: center;
+    max-width: 25rem;
 }
 .border{
-border: 2px;
-border-style: solid;
-border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+.disabled{
+    text-decoration: line-through;
+    color: gray;
+}
+.disabled:hover{
+    text-decoration: line-through;
+    color: gray;
 }
