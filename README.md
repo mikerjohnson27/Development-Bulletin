@@ -28,9 +28,11 @@ Go to heroku link to see website or:
 
 3: Create the database through 'mysql' using 'source db/schema.sql'
 
-3: In the same terminal run 'node server.js'
+4: Exit 'mysql' then enter command 'node seeds/seed.js'
 
-4: View on http://localhost:3001/
+5: In the same terminal run 'node server.js'
+
+6: View on http://localhost:3001/
 
 # Usage
 
