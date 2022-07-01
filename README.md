@@ -17,7 +17,7 @@ who is working on them, and check off completed. As well upload files for the
 project.
 
 # Contributors
-[Ben Anderson](#https://github.com/Squid300), [Michael Johnson](https://github.com/mikerjohnson27), [William Bain](https://github.com/BillyBain), [Jason Nestor](#https://github.com/Jay3172)
+[Ben Anderson](https://github.com/Squid300), [Michael Johnson](https://github.com/mikerjohnson27), [William Bain](https://github.com/BillyBain), [Jason Nestor](https://github.com/Jay3172)
 
 # Installation
 Go to heroku link to see website or:
