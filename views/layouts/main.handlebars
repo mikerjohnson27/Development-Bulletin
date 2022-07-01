@@ -14,7 +14,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#">
           {{#if logged_in}}
-            <a href="/profile"></a>
+            <a href="/dev"></a>
            <button>Log-Out</button>
           {{else}}
             <a href="/login"></a>
@@ -30,9 +30,9 @@
   <body>
       {{{body}}}
       {{#if logged_in}}
-        <a href="../profile"></a>
+        <a href="/dev"></a>
       {{else}}
-        <a href="../login"></a>
+        <a href="/login"></a>
       {{/if}}
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
