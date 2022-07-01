@@ -42,15 +42,25 @@ Github Repo: https://github.com/mikerjohnson27/Development-Bulletin
 
 
 # Tech Used
+
 [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+
 [dotenv](https://www.npmjs.com/package/dotenv)
+
 [express](https://www.npmjs.com/package/express)
+
 [express-fileupload](https://www.npmjs.com/package/express-fileupload)
+
 [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+
 [express-session](https://www.npmjs.com/package/express-session)
+
 [handlebars](https://www.npmjs.com/package/handlebars)
+
 [mysql2](https://www.npmjs.com/package/mysql2)
+
 [router](https://www.npmjs.com/package/router)
+
 [sequelize](https://www.npmjs.com/package/sequelize)
 
 # Screenshot
