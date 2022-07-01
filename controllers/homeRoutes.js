@@ -1,17 +1,19 @@
 const router = require('express').Router();
-const { Project, User, Task, User_tasks } = require('../models');
+const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.findAll({});
+    const projectData = await Project.findAll({
+        model: User,
+        attributes: ['name'],
+    });
 
     const projects = projectData.map((project) => project.get({ plain: true }));
 
     res.render('homepage', {
       projects,
       logged_in: req.session.logged_in,
-      is_manager: req.session.is_manager
     });
   } catch (e) {
     res.status(500).json(e);
@@ -20,22 +22,20 @@ router.get('/', async (req, res) => {
 
 router.get('/project/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id);
-    const taskData = await Task.findAll({ 
-      where: { project_id: req.params.id },
-      include: {
-        model:  User, as: "UsersForTasks",
-      }
+    const projectData = await Project.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
     });
 
     const project = projectData.get({ plain: true });
-    const task = taskData.map((task) => task.get({ plain: true }));
 
     res.render('project', {
-      ...project,
-      ...task,
-      logged_in: req.session.logged_in,
-      is_manager: req.session.is_manager
+      project,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -53,8 +53,7 @@ router.get('/dev', withAuth, async (req, res) => {
 
     res.render('dev', {
       ...user,
-      logged_in: req.session.logged_in,
-      is_manager: req.session.is_manager
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
