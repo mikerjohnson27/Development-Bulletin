@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const passwordLogin = await userLogin.checkPassword(req.body.password);
+        const passwordLogin = req.body.password;
 
         if (!passwordLogin) {
             res.status(404).json({ message: 'Incorrect email or password. Please try again!' });
