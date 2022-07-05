@@ -8,7 +8,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const projects = projectData.map((project) => project.get({ plain: true }));
 
-    res.render('homepage', {
+    res.render('partials/homepage', {
       projects,
       logged_in: req.session.logged_in,
       manager: req.session.isManager
@@ -31,7 +31,7 @@ router.get('/project/:id', async (req, res) => {
     const project = projectData.get({ plain: true });
     const task = taskData.map((task) => task.get({ plain: true }));
 
-    res.render('project', {
+    res.render('partials/project', {
       project,
       task,
       logged_in: req.session.logged_in,
@@ -53,7 +53,7 @@ router.get('/dev', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('partials/dev', {
       ...user,
       logged_in: true,
       manager: req.session.isManager
@@ -68,7 +68,7 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-  res.render('login');
+  res.render('partials/login');
 });
 
 module.exports = router;
