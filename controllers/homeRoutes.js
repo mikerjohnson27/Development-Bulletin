@@ -11,6 +11,7 @@ router.get('/', withAuth, async (req, res) => {
     res.render('homepage', {
       projects,
       logged_in: req.session.logged_in,
+      manager: req.session.isManager
     });
   } catch (e) {
     res.status(500).json(e);
@@ -33,7 +34,8 @@ router.get('/project/:id', async (req, res) => {
     res.render('project', {
       project,
       task,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      manager: req.session.isManager
     });
   } catch (err) {
     res.status(500).json(err);
@@ -53,7 +55,8 @@ router.get('/dev', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      manager: req.session.isManager
     });
   } catch (err) {
     res.status(500).json(err);

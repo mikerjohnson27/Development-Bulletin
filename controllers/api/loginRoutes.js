@@ -1,23 +1,33 @@
 const router =require('express').Router();
 const { User } = require('../../models');
 
-router.post('/', async (req, res) => {
+router.get('/signup', async (req, res) =>{
+    try{
+        res.render('signup');
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
+router.post('/create', async (req, res) => {
     try{
         const userCreate = await User.create({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
+            is_manager: req.body.manager,
         });
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.body.manager ? req.session.isManager = true : req.session.isManager = false;
             res.status(200).json(userCreate);
         });
     } catch (e) {
-        res.status(500).json(e)
+        res.status(500).json(e);
     }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const userLogin = await User.findOne({
             where: {
@@ -30,7 +40,9 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const passwordLogin = req.body.password;
+        const passwordLogin = userLogin.checkPassword(req.body.password);
+        const user = userLogin.get({ plain: true });
+        const manager = user.is_manager;
 
         if (!passwordLogin) {
             res.status(404).json({ message: 'Incorrect email or password. Please try again!' });
@@ -40,10 +52,12 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.loggedIn = true;
 
+            manager ? req.session.isManager = true : req.session.isManager = false;
+
             res.status(200).json({ user: userLogin, message: 'Welcome back to Development Bulletin!' })
         })
     } catch (e) {
-        res.status(404).end();
+        res.status(500).json(e);
     }
 });
 
