@@ -1,15 +1,15 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#username').value.trim();
+    const username = document.querySelector('#username').value.trim();
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
-    const manager = document.queryCommandValue('#manager')
+    const manager = document.querySelector('#manager').checked;
   
-    if (name && email && password) {
-      const response = await fetch('/api/users/login/create', {
+    if (username && email && password) {
+      const response = await fetch('/users/login/create', {
         method: 'POST',
-        body: JSON.stringify({ name, email, password, manager }),
+        body: JSON.stringify({ username, email, password, manager}),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -22,5 +22,5 @@ const signupFormHandler = async (event) => {
   };
 
   document
-  .querySelector('.signup-form')
+  .querySelector('.login-form')
   .addEventListener('submit', signupFormHandler);
