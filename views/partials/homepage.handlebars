@@ -1,19 +1,13 @@
 <div class="row">
   <div class="col-md-6">
-    <h2>Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
+    <div>
+      {{#each project}}'
+      <h2>{{project_name}}</h2>
+      <h4>Amount of Tasks: {{tasks.length}}</h4>
+      <h4>Complete Date: {{complete_date}}</h4>
+      <h6>Description: {{description}}</h6>
+      {{/each}}
+    </div>
   </div>
 </div>
-<script src="./js/app.js"></script>
+
