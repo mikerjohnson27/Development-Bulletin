@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
+const fileUpload = require('express-fileupload');
+router.use(fileUpload());
 
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -16,12 +18,23 @@ router.post('/', withAuth, async (req, res) => {
   });
 
 router.post('/upload', function(req, res) {
-   if (!req.files) {
-    res.status(404).json( { message: "please add upload!" } );
-   } else {
-    res.status(200).json( { message: "File uploaded!" } );
-   }
+  try{ 
+    let file = req.files.sampleFile;
+     let uploadPath = __dirname + '../../../storage/' + file.name;
 
+     if (!req.files) {
+      res.status(404).json( { message: "please add upload!" } );
+     }
+
+     file.mv(uploadPath, function(err) {
+      if(err){
+        return res.status(500).send(err);
+      }
+      res.send('Upload successful');
+     })
+  }catch (err) {
+    res.json(err);
+  }
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
