@@ -4,7 +4,11 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.findAll({});
+    const projectData = await Project.findAll({
+      include: {
+        model: Task,
+      }
+    });
 
     const projects = projectData.map((project) => project.get({ plain: true }));
 
