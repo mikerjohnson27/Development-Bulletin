@@ -14,7 +14,7 @@ router.get('/', withAuth, async (req, res) => {
 
     res.render('partials/homepage', {
       projects,
-      logged_in: req.session.logged_in,
+      logged_in: req.session.loggedIn,
       manager: req.session.isManager
     });
   } catch (e) {

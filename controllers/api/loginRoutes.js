@@ -67,7 +67,7 @@ router.post('/logout', (req, res) => {
         res.status(200).end();
       });
     } else {
-      res.status(404).end();
+      res.json({message:"No Session"})
     }
   });
 

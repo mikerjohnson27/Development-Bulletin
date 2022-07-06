@@ -2,10 +2,10 @@
   <div class="col-md-12">
     <div>
       {{#each projects}}
-      <h2>{{project_name}}</h2>
+      <a href="/project/{{id}}">{{project_name}}
       <h4>Amount of Tasks: {{tasks.length}}</h4>
       <h4>Complete Date: {{complete_date}}</h4>
-      <h6>Description: {{description}}</h6>
+      <h6>Description: {{description}}</h6></a>
       {{/each}}
     </div>
   </div>
