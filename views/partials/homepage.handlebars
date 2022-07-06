@@ -1,5 +1,12 @@
 <div class="row">
-  <h2>Projects</h2>
-    
+  <div class="col-md-12">
+    <div>
+      {{#each project}}'
+      <h2>{{project_name}}</h2>
+      <h4>Amount of Tasks: {{tasks.length}}</h4>
+      <h4>Complete Date: {{complete_date}}</h4>
+      <h6>Description: {{description}}</h6>
+      {{/each}}
+    </div>
+  </div>
 </div>
-<script src="./js/login.js"></script>
