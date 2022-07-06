@@ -30,7 +30,7 @@ router.post('/upload', function(req, res) {
       if(err){
         return res.status(500).send(err);
       }
-      res.send('Upload successful');
+      res.redirect('back');
      })
   }catch (err) {
     res.json(err);
