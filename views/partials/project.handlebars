@@ -1,11 +1,21 @@
     <body>
-        {{#each Project}}
-            <h3>{{project_name}}</h3>
-            <h6>{{project.description}}</h6>
-            {{#each Task}}
-            <h5>{{Task.task_name}}</h5>
+        <h3>{{project.project_name}}</h3>
+        <h6>{{project.description}}</h6>
+        {{#each task}}
+            <h5>{{task_name}}</h5>
             <p>{{description}}</p>
+            <h7>Assigned Users</h7>
+            {{#each UsersForTasks}}
+                <p>{{username}}</p>
             {{/each}}
         {{/each}}
+        <form ref='uploadForm' 
+            id='uploadForm' 
+            action='http://localhost:3001/users/project/upload' 
+            method='post' 
+            encType="multipart/form-data">
+                <input type="file" name="sampleFile" />
+                <input type='submit' value='Upload!' />
+        </form> 
     </body>
 <script src="./js/project.js"></script>
