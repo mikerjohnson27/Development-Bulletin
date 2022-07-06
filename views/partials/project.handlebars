@@ -1,4 +1,11 @@
     <body>
-        
+        {{#each Project}}
+            <h3>{{project_name}}</h3>
+            <h6>{{project.description}}</h6>
+            {{#each Task}}
+            <h5>{{Task.task_name}}</h5>
+            <p>{{description}}</p>
+            {{/each}}
+        {{/each}}
     </body>
 <script src="./js/project.js"></script>
