@@ -8,14 +8,14 @@
             {{#each UsersForTasks}}
                 <p class="text-white m-1">- {{username}}</p>
             {{/each}}
-            <img src='{{file_path}}' alt="task img" width="60" height="60">
+            <img class="m-1 p-1" src='{{file_path}}' alt="task img" width="60" height="60">
         {{/each}}
         <form ref='uploadForm' id='uploadForm' action='/users/project/upload' method='post' encType="multipart/form-data" >
-                <input type="file" id='file' name="file" />
+                <input class="btn btn-success m-1" type="file" id='file' name="file" />
                 <select name="taskSelect" id="taskSelect">
                     {{#each task}}<option value="{{id}}">{{task_name}}</option>{{/each}}
                 </select>
-                <input type='submit' value='Upload!' />
+                <input class="btn btn-success m-1" type='submit' value='Upload!' />
         </form>
     </body>
 <script src="./js/project.js"></script>
