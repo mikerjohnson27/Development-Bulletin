@@ -16,7 +16,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Links](#links)
-- [Test Instructions](#test_instructions)
 - [Tech Used](#tech_used)
 - [Screenshot](#screenshot)
 
@@ -52,8 +51,6 @@ Go to Heroku link to see website or:
 Github Repo: https://github.com/mikerjohnson27/Development-Bulletin
 
 Heroku App (Live Link): https://whispering-journey-87250.herokuapp.com/
-# Test Instructions
-
 
 # Tech Used
 
@@ -81,5 +78,5 @@ Heroku App (Live Link): https://whispering-journey-87250.herokuapp.com/
 
 
 # Screenshots
-![Homepage Screen Shot](../Development-Bulletin/docs/Screenshot%202022-07-07%20112122.png)
+![Screenshot 2022-07-07 112122](https://user-images.githubusercontent.com/100814286/177880706-e80967ce-2f6b-4831-bd3d-16898fca6171.png)
 
