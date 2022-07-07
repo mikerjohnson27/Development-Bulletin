@@ -19,7 +19,9 @@ router.post('/create', async (req, res) => {
         });
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.user = user.username;
             req.body.manager ? req.session.isManager = true : req.session.isManager = false;
+            
             res.status(200).json(userCreate);
         });
     } catch (e) {
@@ -51,7 +53,7 @@ router.post('/', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
-
+            req.session.user = user.username;
             manager ? req.session.isManager = true : req.session.isManager = false;
 
             res.status(200).json({ user: userLogin, message: 'Welcome back to Development Bulletin!' })
