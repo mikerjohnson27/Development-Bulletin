@@ -1,12 +1,12 @@
-    <body>
-        <h3>{{project.project_name}}</h3>
-        <h6>{{project.description}}</h6>
+    <body >
+        <h3 class="text-white m-1 p-1 border-bottom border-success">{{project.project_name}}</h3>
+        <h6 class="text-white m-1">{{project.description}}</h6>
         {{#each task}}
-            <h5>{{task_name}}</h5>
-            <p>{{description}}</p>
-            <h7>Assigned Users</h7>
+            <h5 class="text-white m-1 border-bottom border-success">{{task_name}}</h5>
+            <p class="text-white m-1">{{description}}</p>
+            <h7 class="text-white m-1">Assigned Users:</h7>
             {{#each UsersForTasks}}
-                <p>{{username}}</p>
+                <p class="text-white m-1">- {{username}}</p>
             {{/each}}
         {{/each}}
         <form ref='uploadForm' 
@@ -14,8 +14,8 @@
             action='http://localhost:3001/users/project/upload' 
             method='post' 
             encType="multipart/form-data">
-                <input type="file" name="sampleFile" />
-                <input type='submit' value='Upload!' />
+                <input class="btn btn-success m-1" type="file" name="sampleFile" />
+                <input class="btn btn-success m-1" type='submit' value='Upload!' />
         </form> 
     </body>
 <script src="./js/project.js"></script>
