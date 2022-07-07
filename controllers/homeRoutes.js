@@ -48,7 +48,8 @@ router.get('/project/:id', async (req, res) => {
 
 router.get('/dev', withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findOne({
+      where: {username: req.session.user},
       attributes: { exclude: ['password'] },
       include: {
         model: Task, as: 'TasksForUser'
@@ -58,7 +59,7 @@ router.get('/dev', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render('partials/dev', {
-      ...user,
+      user,
       logged_in: true,
       manager: req.session.isManager
     });

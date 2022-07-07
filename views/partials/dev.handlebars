@@ -1,16 +1,9 @@
 <div>
-    <h3>{{User}}</h3>
-    <h4>{{username}}</h4>
-    <h5>{{email}}</h5>
-    {{#each Task}}
+    <h4>{{user.username}}</h4>
+    <h5>{{user.email}}</h5>
+    {{#each TasksForUser}}
     <h6>Complete: {{complete_date}}</h6>
     <h5>{{task_name}}</h5>
     <h6>{{description}}</h6>
     {{/each}}
-    {{#each Project}}
-    <h6>Assigned: {{complete_date}}</h6>
-    <h5>{{project_name}}</h5>
-    <h6>{{description}}</h6>
-    {{/each}}
-</div>
 <script src="./js/dev.js"></script>
