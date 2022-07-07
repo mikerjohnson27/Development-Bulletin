@@ -4,6 +4,7 @@
         {{#each task}}
             <h5 class="text-white m-1 border-bottom border-success">{{task_name}}</h5>
             <p class="text-white m-1">{{description}}</p>
+            <img src='{{file_path}}' alt="task img" width="60" height="60">
             <h7 class="text-white m-1">Assigned Users:</h7>
             {{#each UsersForTasks}}
                 <p class="text-white m-1">- {{username}}</p>

@@ -30,6 +30,10 @@ Task.init(
         key: 'id',
       },
     },
+    file_path: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }
   },
   {
     sequelize,
