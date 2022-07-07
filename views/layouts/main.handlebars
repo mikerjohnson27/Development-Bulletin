@@ -7,29 +7,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<nav  class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Dev Bulletin</a>
-  <div class="navbar">
+<nav  class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid p-2 ">
+    <a class="navbar-brand" href="/"><h3 class="text-white">Dev Bulletin</h3></a>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">
           {{#if logged_in}}
-           <button id="logout">Log-Out</button>
-           <a href="/dev"><button>Profile</button></a>
-           <a href="/project"><button>Projects</button></a>
+           <button type="button" class="btn btn-dark" id="logout">Log-Out</button>
+           <a href="/dev"><button type="button" class="btn btn-dark">Profile</button></a>
           {{else}}
-            <a href="/login"><button>Log In</button></a>
+            <a type="button" href="/login"><button  class="btn btn-dark">Log In</button></a>
           {{/if}}
-
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Creators</a>
-      </li>
     </ul>
   </div>
 </nav>
-  <body>
+  <body class="bg-dark">
       {{{body}}}
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

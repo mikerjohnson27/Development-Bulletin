@@ -1,11 +1,14 @@
 <div class="row">
   <div class="col-md-12">
-    <div>
+    <div class="m-2 p-2">
       {{#each projects}}
-      <a href="/project/{{id}}">{{project_name}}
-      <h4>Amount of Tasks: {{tasks.length}}</h4>
-      <h4>Complete Date: {{complete_date}}</h4>
-      <h6>Description: {{description}}</h6></a>
+      <div class="border border-success p-2 m-2 bg-success">
+        <a href="/project/{{id}}">
+        <h2 class="text-white">{{project_name}}</h2>
+        <h4 class="text-white">Amount of Tasks: {{tasks.length}}</h4>
+        <h4 class="text-white">Complete Date: {{complete_date}}</h4>
+        <h6 class="text-white">Description: {{description}}</h6></a>
+      </div>
       {{/each}}
     </div>
   </div>
