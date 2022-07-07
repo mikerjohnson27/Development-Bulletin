@@ -65,5 +65,6 @@ Heroku App: https://dashboard.heroku.com/apps/development-bulletin/deploy/heroku
 [router](https://www.npmjs.com/package/router)
 
 [sequelize](https://www.npmjs.com/package/sequelize)
+[sequelize](https://www.npmjs.com/package/sequelize)
 
-# Screenshot
+# Screenshots
