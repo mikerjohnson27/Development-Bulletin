@@ -19,7 +19,7 @@ router.post('/create', async (req, res) => {
         });
         req.session.save(() => {
             req.session.loggedIn = true;
-            req.session.user = user.username;
+            req.session.user = req.body.username;
             req.body.manager ? req.session.isManager = true : req.session.isManager = false;
             
             res.status(200).json(userCreate);
