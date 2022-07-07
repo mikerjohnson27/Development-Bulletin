@@ -1,4 +1,14 @@
 # Development-Bulletin
+![HTML Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![JavaScript Badge](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Express.JS Badge](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![Express.JS Badge](https://img.shields.io/badge/sequelize-323330?style=for-the-badge&logo=sequelize&logoColor=blue)
+![MySQL Badge](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+
+![License Badge](https://img.shields.io/github/license/mikerjohnson27/Development-Bulletin.svg)
+
 
 ## Table of Contents
 - [Description](#description)
@@ -13,14 +23,14 @@
 # Description
 This project will be an application website that helps developers create 
 templates for their projects. They will be able to create projects, add tasks, show 
-who is working on them, and check off completed. As well upload files for the 
+who is working on them, and check off completed. As well as upload files for the 
 project.
 
 # Contributors
 [Ben Anderson](https://github.com/Squid300), [Michael Johnson](https://github.com/mikerjohnson27), [William Bain](https://github.com/BillyBain), [Jason Nestor](https://github.com/Jay3172)
 
 # Installation
-Go to heroku link to see website or:
+Go to Heroku link to see website or:
 
 1: Pull from: https://github.com/mikerjohnson27/Development-Bulletin
 
@@ -28,43 +38,48 @@ Go to heroku link to see website or:
 
 3: Create the database through 'mysql' using 'source db/schema.sql'
 
-4: Exit 'mysql' then enter command 'node seeds/seed.js'
+4: Exit 'mysql' by typing 'exit' in the terminal and pressing enter then type 'node seeds/seed.js' to run the data so you can login.
 
 5: In the same terminal run 'node server.js'
 
 6: View on http://localhost:3001/
 
 # Usage
+![License Badge](https://img.shields.io/github/license/mikerjohnson27/Development-Bulletin.svg)
 
 
 # Links
 Github Repo: https://github.com/mikerjohnson27/Development-Bulletin
-Heroku App: https://dashboard.heroku.com/apps/development-bulletin/deploy/heroku-git
 
+Heroku App (Live Link): https://whispering-journey-87250.herokuapp.com/
 # Test Instructions
 
 
 # Tech Used
 
-[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+[Connect Session Sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
-[dotenv](https://www.npmjs.com/package/dotenv)
+[Dot Env](https://www.npmjs.com/package/dotenv)
 
-[express](https://www.npmjs.com/package/express)
+[Express](https://www.npmjs.com/package/express)
 
-[express-fileupload](https://www.npmjs.com/package/express-fileupload)
+[Express File Upload](https://www.npmjs.com/package/express-fileupload)
 
-[express-handlebars](https://www.npmjs.com/package/express-handlebars)
+[Express Handlebars](https://www.npmjs.com/package/express-handlebars)
 
-[express-session](https://www.npmjs.com/package/express-session)
+[Express Session](https://www.npmjs.com/package/express-session)
 
-[handlebars](https://www.npmjs.com/package/handlebars)
+[Handlebars](https://www.npmjs.com/package/handlebars)
 
-[mysql2](https://www.npmjs.com/package/mysql2)
+[MY SQL 2](https://www.npmjs.com/package/mysql2)
 
-[router](https://www.npmjs.com/package/router)
+[Router](https://www.npmjs.com/package/router)
 
-[sequelize](https://www.npmjs.com/package/sequelize)
-[sequelize](https://www.npmjs.com/package/sequelize)
+[Sequelize](https://www.npmjs.com/package/sequelize)
+
+[Nodemon](https://www.npmjs.com/package/nodemon)
+
 
 # Screenshots
+![Homepage Screen Shot](../Development-Bulletin/docs/Screenshot%202022-07-07%20112122.png)
+
