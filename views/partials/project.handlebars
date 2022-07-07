@@ -10,13 +10,12 @@
                 <p class="text-white m-1">- {{username}}</p>
             {{/each}}
         {{/each}}
-        <form ref='uploadForm' 
-            id='uploadForm' 
-            action='http://localhost:3001/users/project/upload' 
-            method='post' 
-            encType="multipart/form-data">
-                <input class="btn btn-success m-1" type="file" name="sampleFile" />
-                <input class="btn btn-success m-1" type='submit' value='Upload!' />
-        </form> 
+        <form ref='uploadForm' id='uploadForm' action='/users/project/upload' method='post' encType="multipart/form-data" >
+                <input type="file" id='file' name="file" />
+                <select name="taskSelect" id="taskSelect">
+                    {{#each task}}<option value="{{id}}">{{task_name}}</option>{{/each}}
+                </select>
+                <input type='submit' value='Upload!' />
+        </form>
     </body>
 <script src="./js/project.js"></script>
