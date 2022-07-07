@@ -21,7 +21,7 @@ router.post('/upload', function(req, res) {
   try{ 
     let file = req.files.file;
     let taskid = req.body.taskSelect;
-    let uploadPath = __dirname + '../../../public/storage/' + file.name;
+    let uploadPath = __dirname + '/../../../public/storage/' + file.name;
     let filepath = '/storage/' + file.name;
 
      if (!req.files) {
