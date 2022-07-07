@@ -4,18 +4,19 @@
         {{#each task}}
             <h5>{{task_name}}</h5>
             <p>{{description}}</p>
+            <img src='{{file_path}}' alt="task img" width="60" height="60">
             <h7>Assigned Users</h7>
             {{#each UsersForTasks}}
                 <p>{{username}}</p>
             {{/each}}
         {{/each}}
-        <form ref='uploadForm' 
-            id='uploadForm' 
-            action='http://localhost:3001/users/project/upload' 
-            method='post' 
-            encType="multipart/form-data">
-                <input type="file" name="sampleFile" />
+        {{#if manager}}
+        <form ref='uploadForm' id='uploadForm' action='/users/project/upload' method='post' encType="multipart/form-data" >
+                <input type="file" id='file' name="file" />
+                <select name="taskSelect" id="taskSelect">
+                    {{#each task}}<option value="{{id}}">{{task_name}}</option>{{/each}}
+                </select>
                 <input type='submit' value='Upload!' />
-        </form> 
+        </form>
+        {{/if}}
     </body>
-<script src="./js/project.js"></script>
