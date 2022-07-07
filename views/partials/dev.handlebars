@@ -1,9 +1,9 @@
 <div>
-    <h4>{{user.username}}</h4>
-    <h5>{{user.email}}</h5>
+    <h4 class="text-white m-1 p-1 border-bottom border-success">{{user.username}}</h4>
+    <h5 class="text-white m-1 p-1 border-bottom border-success">{{user.email}}</h5>
     {{#each TasksForUser}}
-    <h6>Complete: {{complete_date}}</h6>
-    <h5>{{task_name}}</h5>
-    <h6>{{description}}</h6>
+    <h6 class="text-white m-1 p-1">Complete: {{complete_date}}</h6>
+    <h5 class="text-white m-1 p-1 border-bottom border-success">{{task_name}}</h5>
+    <h6 class="text-white m-1 p-1">{{description}}</h6>
     {{/each}}
 <script src="./js/dev.js"></script>
