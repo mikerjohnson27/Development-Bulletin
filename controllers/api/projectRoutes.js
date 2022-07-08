@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project, Task } = require('../../models');
 const withAuth = require('../../utils/auth');
 const fileUpload = require('express-fileupload');
+const path = require('path');
 router.use(fileUpload());
 
 router.post('/', withAuth, async (req, res) => {
@@ -21,8 +22,7 @@ router.post('/upload', function(req, res) {
   try{ 
     let file = req.files.file;
     let taskid = req.body.taskSelect;
-    let uploadPath = __dirname + '/../../public/storage/' + file.name;
-    let filepath = '/storage/' + file.name;
+    let uploadPath = path.join(process.env.TEMP_DIR, file.name);
 
      if (!req.files) {
       res.status(404).json( { message: "please add upload!" } );
@@ -35,7 +35,7 @@ router.post('/upload', function(req, res) {
 
       Task.update(
         {
-          file_path: filepath,
+          file_path: uploadPath,
         },
         {
           where: {id: taskid},
@@ -46,6 +46,15 @@ router.post('/upload', function(req, res) {
      })
   }catch (err) {
     res.json(err);
+  }
+});
+router.get('/load-file', withAuth, async (req, res) => {
+  try{
+    const filePath = req.query.filePath;
+
+    res.sendFile(filePath);
+  } catch (e) {
+    res.status(500).end();
   }
 });
 
