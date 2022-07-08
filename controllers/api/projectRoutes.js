@@ -21,8 +21,8 @@ router.post('/upload', function(req, res) {
   try{ 
     let file = req.files.file;
     let taskid = req.body.taskSelect;
-    let uploadPath = __dirname + '/../../public/storage/' + file.name;
-    let filepath = '/storage/' + file.name;
+    let uploadPath = '/tmp/' + file.name;
+    let filepath = '/tmp/' + file.name;
 
      if (!req.files) {
       res.status(404).json( { message: "please add upload!" } );
