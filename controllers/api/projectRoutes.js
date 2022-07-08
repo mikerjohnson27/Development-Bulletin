@@ -22,7 +22,6 @@ router.post('/upload', function(req, res) {
     let file = req.files.file;
     let taskid = req.body.taskSelect;
     let uploadPath = '/tmp/' + file.name;
-    let filepath = '/tmp/' + file.name;
 
      if (!req.files) {
       res.status(404).json( { message: "please add upload!" } );
@@ -35,7 +34,7 @@ router.post('/upload', function(req, res) {
 
       Task.update(
         {
-          file_path: filepath,
+          file_path: uploadPath,
         },
         {
           where: {id: taskid},
@@ -46,6 +45,15 @@ router.post('/upload', function(req, res) {
      })
   }catch (err) {
     res.json(err);
+  }
+});
+router.get('/load-file', withAuth, async (req, res) => {
+  try{
+    const filePath = req.query.filePath;
+
+    res.sendFile(filePath);
+  } catch (e) {
+    res.status(500);
   }
 });
 
