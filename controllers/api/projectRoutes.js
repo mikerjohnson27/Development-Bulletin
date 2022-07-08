@@ -53,7 +53,7 @@ router.get('/load-file', withAuth, async (req, res) => {
 
     res.sendFile(filePath);
   } catch (e) {
-    res.status(500);
+    res.status(500).end();
   }
 });
 
